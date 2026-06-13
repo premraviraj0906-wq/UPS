@@ -14,22 +14,35 @@ window.addEventListener('scroll', () => {
 // ===== HAMBURGER MENU =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+const navOverlay = document.getElementById('navOverlay');
+
+function openNav() {
+  navLinks.classList.add('open');
+  navOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
   const spans = hamburger.querySelectorAll('span');
-  if (navLinks.classList.contains('open')) {
-    spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-  } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-  }
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+  spans[1].style.opacity = '0';
+  spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+}
+
+function closeNav() {
+  navLinks.classList.remove('open');
+  navOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+  hamburger.querySelectorAll('span').forEach(s => {
+    s.style.transform = ''; s.style.opacity = '';
   });
+}
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.contains('open') ? closeNav() : openNav();
+});
+
+navOverlay.addEventListener('click', closeNav);
+
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', closeNav);
 });
 
 // ===== INTERSECTION OBSERVER (AOS) =====
