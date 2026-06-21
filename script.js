@@ -52,17 +52,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 aosEls.forEach(el => revealObserver.observe(el));
 
-// ===== PRODUCT CARD INTERSECT GLOW TRIGGER =====
-const cardObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const card = entry.target;
-    card.classList.add('shine-flash');
-    setTimeout(() => card.classList.remove('shine-flash'), 1200);
-    cardObserver.unobserve(card);
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.product-card').forEach(c => cardObserver.observe(c));
 
 // ===== COUNTER ANIMATION =====
 const counters = document.querySelectorAll('.count');
@@ -264,4 +253,22 @@ function handleSubmit(e) {
   const message = document.getElementById('fmessage').value.trim();
   const body    = `Name: ${name}\nEmail: ${email}\n\n${message}`;
   window.location.href = `mailto:Unitypower2018@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+// ===== CAROUSEL NAVIGATION =====
+const productCarousel = document.getElementById('productCarousel');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+if (productCarousel && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    // Scroll by the width of one card plus gap
+    const scrollAmount = productCarousel.offsetWidth * 0.8; 
+    productCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    const scrollAmount = productCarousel.offsetWidth * 0.8;
+    productCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
 }
