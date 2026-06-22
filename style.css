@@ -1514,7 +1514,7 @@ body.cursor-ready #cursor-glow { opacity: 1; }
   }
   .about-box-mid p {
     font-size: 18px !important; font-weight: 700;
-    color: #fff; text-align: center;
+    color: #000; text-align: center;
     line-height: 1.5; margin: 0 !important;
   }
   .about-box-bottom {
