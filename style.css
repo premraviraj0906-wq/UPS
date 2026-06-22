@@ -564,7 +564,6 @@ body {
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .carousel-btn {
@@ -574,17 +573,22 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  color: var(--text);
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
   font-size: 18px;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
   z-index: 10;
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.3);
   transition: var(--transition);
 }
-.carousel-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.carousel-btn:hover { 
+  background: var(--primary-dark); 
+  border-color: var(--primary-dark);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.4);
+}
 .carousel-btn.prev-btn { left: -24px; }
 .carousel-btn.next-btn { right: -24px; }
 .product-card {
@@ -625,10 +629,14 @@ body {
   display: block;
 }
 /* Override for Bento Grid specifically */
+.bento-normal .product-img-wrap,
+.bento-wide .product-img-wrap {
+  background: #ffffff;
+}
 .bento-normal .product-img-wrap img,
 .bento-wide .product-img-wrap img {
-  object-fit: cover;
-  padding: 0;
+  object-fit: contain;
+  padding: 30px;
   background: transparent;
 }
 .product-card:hover .product-img-wrap img { transform: scale(1.08); }
@@ -660,11 +668,11 @@ body {
 }
 .product-body h3 {
   font-size: 18px; font-weight: 700; color: var(--text);
-  margin-bottom: 10px; letter-spacing: -0.2px;
+  margin-bottom: 8px; letter-spacing: -0.2px;
 }
-.product-body > p { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 18px; }
+.product-body > p { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 14px; }
 .product-specs {
-  list-style: none; margin-bottom: 22px; flex: 1;
+  list-style: none; margin-bottom: 16px; flex: initial;
   display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
 }
 .product-specs li {
