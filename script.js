@@ -272,3 +272,362 @@ if (productCarousel && prevBtn && nextBtn) {
     productCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
 }
+
+// ========================================================
+// ===== PROJECTS SHOWCASE & LIGHTBOX INTERACTION =====
+// ========================================================
+
+const projectsData = [
+  {
+    id: 1,
+    title: 'Vertiv Liebert ITA2 Rackmount UPS & Exide Powersafe SMF Bank',
+    category: 'Enterprise IT',
+    app: 'Server Room / IT Data Center, Bengaluru',
+    status: 'Active Server Room',
+    img: 'assets/images/server-room-vertiv-ups.jpeg',
+    desc: 'High-density enterprise server room deployment designed for continuous computing uptime. Features a Vertiv Liebert ITA2 true online double-conversion UPS, interconnected with a heavy-duty multi-tier rack holding 16 Exide Powersafe SMF/VRLA batteries and Legrand industrial distribution switchgear.',
+    specs: [
+      { label: 'System Topology', val: 'Online Double Conversion' },
+      { label: 'Battery Bank', val: '16x Exide Powersafe SMF' },
+      { label: 'Transfer Time', val: '0 ms (Continuous)' },
+      { label: 'Switchgear', val: 'Legrand Isolation Breakers' }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Commercial On-Grid Rooftop Solar Power Plant',
+    category: 'Solar Energy',
+    app: 'Commercial Rooftop Installation, Karnataka',
+    status: 'Commissioned Site',
+    img: 'assets/images/rooftop-solar-installation.jpeg',
+    desc: 'Turnkey rooftop solar installation reducing enterprise energy footprint and providing clean daytime power directly to building loads. Engineered with high-efficiency monocrystalline solar panels on wind-resistant galvanized structural racking.',
+    specs: [
+      { label: 'Installation Type', val: 'Rooftop On-Grid Solar' },
+      { label: 'Solar Modules', val: 'Tier-1 Mono PERC Panels' },
+      { label: 'Mounting Structure', val: 'Hot-Dip Galvanized Iron' },
+      { label: 'ROI Estimate', val: '3.5 - 4 Years' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Servopack Heavy-Duty Industrial Servo Voltage Stabilizer',
+    category: 'Servo Stabilizer',
+    app: 'Industrial Manufacturing Plant, Bengaluru',
+    status: 'Substation Room',
+    img: 'assets/images/industrial-servo-stabilizer-servopack.jpeg',
+    desc: 'Precision heavy-duty industrial Servo Stabilizer installed inside a main electrical switchroom. Protects automated manufacturing and CNC equipment against voltage sags, surges, and unbalanced 3-phase grid supplies.',
+    specs: [
+      { label: 'Stabilizer Type', val: 'Digital Industrial Servo' },
+      { label: 'Winding Material', val: '100% Heavy Copper Wound' },
+      { label: 'Response Speed', val: '< 10ms Fast Response' },
+      { label: 'Protection', val: 'High/Low Voltage & Phase Fault' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Microtek Jumbo New 5500+ Commercial Power System',
+    category: 'Inverter & Battery',
+    app: 'Commercial Facility & Medical Labs, Bengaluru',
+    status: 'High Capacity',
+    img: 'assets/images/microtek-jumbo-5500-battery-bank.jpeg',
+    desc: 'Heavy-duty 5.5kVA commercial inverter setup paired with a 4-battery industrial tubular bank. Drives heavy loads such as diagnostic medical machines, studio lighting, and IT clusters with reliable pure sine wave output.',
+    specs: [
+      { label: 'Capacity', val: '5.5 kVA Pure Sine Wave' },
+      { label: 'Battery Bank', val: '4x Tall Tubular Batteries (48V)' },
+      { label: 'Charging Tech', val: 'Microcontroller Multi-Stage' },
+      { label: 'Load Support', val: 'Air Coolers, IT Labs, Motors' }
+    ]
+  },
+  {
+    id: 5,
+    title: 'Microtek i-Lithium Wall-Mounted Smart Inverter',
+    category: 'Next-Gen Lithium',
+    app: 'Modern Residence & Smart Office, Bengaluru',
+    status: 'Zero Floor Space',
+    img: 'assets/images/microtek-i-lithium-wall-mount.jpeg',
+    desc: 'Compact, wall-mounted lithium inverter installation offering zero floor footprint, silent operation, and built-in lithium battery cells. Features Wi-Fi IoT connectivity for live battery state-of-charge tracking on mobile devices.',
+    specs: [
+      { label: 'Battery Type', val: 'Integrated Lithium (LiFePO4)' },
+      { label: 'Form Factor', val: 'Wall-Mount / Slim Design' },
+      { label: 'IoT Features', val: 'Wi-Fi Smart App Monitoring' },
+      { label: 'Maintenance', val: '100% Maintenance-Free' }
+    ]
+  },
+  {
+    id: 6,
+    title: 'Rooftop Solar Structure & Panel Assembly in Progress',
+    category: 'Solar Energy',
+    app: 'On-Site Field Project, Bengaluru',
+    status: 'On-Site Engineering',
+    img: 'assets/images/solar-panel-structure-assembly.jpeg',
+    desc: 'Behind-the-scenes engineering photo of Unity Power Solutions technicians mounting and aligning heavy-gauge solar PV arrays on an engineered rooftop frame, ensuring strict wind-load compliance and waterproof anchoring.',
+    specs: [
+      { label: 'Engineering Role', val: 'Civil & Electrical Erection' },
+      { label: 'Cabling Standard', val: 'UV-Protected Solar DC Wires' },
+      { label: 'Earthing & Lightning', val: 'Dedicated Chemical Earthing' },
+      { label: 'Quality Audit', val: 'Pre-Commissioning String Testing' }
+    ]
+  },
+  {
+    id: 7,
+    title: 'Flydika Industrial High-Power Online UPS',
+    category: 'Enterprise IT',
+    app: 'Manufacturing Assembly Floor, Peenya Industrial Area',
+    status: 'Production Line',
+    img: 'assets/images/industrial-online-ups-rack.jpeg',
+    desc: 'Floor-standing industrial online UPS cabinet on heavy caster wheels with modular battery rack. Provides seamless isolation from harmonic distortion, industrial spikes, and voltage drops to keep assembly lines running uninterrupted.',
+    specs: [
+      { label: 'Unit Type', val: 'Heavy Online Industrial UPS' },
+      { label: 'Battery Topology', val: 'Multi-Tier Isolated SMF Bank' },
+      { label: 'Switchgear', val: 'Schneider Electric Protections' },
+      { label: 'Mobility', val: 'Reinforced Caster Wheels' }
+    ]
+  },
+  {
+    id: 8,
+    title: 'Exide Home Star Inverter & Dual 150Ah Tubular Batteries',
+    category: 'Inverter & Battery',
+    app: 'Premium Home & Medical Clinic, Bengaluru',
+    status: 'Long Backup',
+    img: 'assets/images/exide-home-star-dual-battery.jpeg',
+    desc: 'Extended-duration power backup installation with Exide Home Star pure sine wave inverter and two Exide EL 150L tubular batteries on a rugged spill tray, providing seamless back-up power for residential lighting, fans, and diagnostic clinics.',
+    specs: [
+      { label: 'Inverter Model', val: 'Exide Home Star 24V' },
+      { label: 'Battery Chemistry', val: '2x Exide EL 150L Tubular' },
+      { label: 'Warranty', val: '36 Months Manufacturer Warranty' },
+      { label: 'Waveform', val: 'Pure Sine Wave' }
+    ]
+  },
+  {
+    id: 9,
+    title: 'Microtek Jumbo New 4000+ with Modular Trolley Enclosures',
+    category: 'Inverter & Battery',
+    app: 'Corporate Office / Retail Facility, Bengaluru',
+    status: 'Clean Wiring',
+    img: 'assets/images/microtek-jumbo-4000-trolley.jpeg',
+    desc: 'Modern commercial office backup setup using the Microtek Jumbo New 4000+ inverter placed on dual modular shockproof battery trolleys. Keeps electrical cabling enclosed and safe from accidental contact while delivering aesthetic office integration.',
+    specs: [
+      { label: 'Capacity', val: '4 kVA Pure Sine Wave' },
+      { label: 'Enclosure', val: 'Dual Heavy Duty Shockproof Trolleys' },
+      { label: 'Safety Rating', val: 'Child & Office Safe Wire Enclosure' },
+      { label: 'Ventilation', val: 'Active Fan Exhaust Cooling' }
+    ]
+  },
+  {
+    id: 10,
+    title: 'Precision Digital Industrial Servo Stabilizer',
+    category: 'Servo Stabilizer',
+    app: 'Commercial Labs & CNC Facilities, Bengaluru',
+    status: 'Pre-Dispatch Test',
+    img: 'assets/images/digital-servo-stabilizer-cabinet.jpeg',
+    desc: 'Microcontroller-driven industrial Servo Stabilizer unit calibrated and tested at the Unity Power Solutions workshop before client site deployment. Delivers precise +/- 1% output regulation to protect precision digital and medical instruments.',
+    specs: [
+      { label: 'Regulation Accuracy', val: '+/- 1% Output Precision' },
+      { label: 'Display Panel', val: 'Digital Multifunction LCD/LED' },
+      { label: 'Operating Voltage', val: 'Wide Input Window (170V - 270V)' },
+      { label: 'Duty Cycle', val: 'Continuous 100% Heavy Duty' }
+    ]
+  },
+  {
+    id: 11,
+    title: 'Exide Invagold 3-Tier Commercial Battery Rack Setup',
+    category: 'Inverter & Battery',
+    app: 'High-Density Workplace, Bengaluru',
+    status: 'Space Optimized',
+    img: 'assets/images/exide-invagold-tubular-rack.jpeg',
+    desc: 'Engineered multi-tier steel rack housing 3 Exide Invagold C10 tubular batteries with a top inverter shelf. Optimizes vertical space inside tight commercial utility closets while maintaining optimal airflow around battery cells.',
+    specs: [
+      { label: 'Battery Model', val: '3x Exide Invagold C10 Tubular' },
+      { label: 'Rack Design', val: 'Heavy-Gauge Powder-Coated Steel' },
+      { label: 'Warranty Coverage', val: '48 Months Warranty' },
+      { label: 'Cooling Design', val: 'Perforated Mesh Airflow Trays' }
+    ]
+  },
+  {
+    id: 12,
+    title: 'Smart Wall-Mount Lithium Power Specifications (1500 & 3000 Series)',
+    category: 'Next-Gen Lithium',
+    app: 'Next-Gen Power Architecture, South India',
+    status: 'Next-Gen Tech',
+    img: 'assets/images/microtek-i-lithium-features.jpeg',
+    desc: 'Official technical specifications showcase for the Microtek i-Lithium smart series available through Unity Power Solutions. Outlines key advantages: up to 3,500 battery charge cycles, 5-year warranty, integrated BMS protection, and Wi-Fi IoT status tracking.',
+    specs: [
+      { label: 'Cycle Life', val: 'Up to 3,500 Cycles (> 10 Years)' },
+      { label: 'Warranty', val: '5 Years Manufacturer Warranty' },
+      { label: 'Smart Tech', val: 'Wi-Fi IoT Live Monitoring' },
+      { label: 'Charging Speed', val: 'Up to 3x Faster Recharge' }
+    ]
+  }
+];
+
+// Project Filter Buttons
+const filterBtns = document.querySelectorAll('.project-filters .filter-btn');
+const projectCards = document.querySelectorAll('.projects-grid .project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+
+    projectCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      if (filter === 'all' || category === filter) {
+        card.classList.remove('is-hidden');
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+  });
+});
+
+// Modal Elements
+const projectModal = document.getElementById('projectModal');
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const modalPrevBtn = document.getElementById('modalPrevBtn');
+const modalNextBtn = document.getElementById('modalNextBtn');
+const modalImg = document.getElementById('modalImg');
+const modalCounter = document.getElementById('modalCounter');
+const modalCategory = document.getElementById('modalCategory');
+const modalStatus = document.getElementById('modalStatus');
+const modalTitle = document.getElementById('modalTitle');
+const modalApp = document.getElementById('modalApp');
+const modalDesc = document.getElementById('modalDesc');
+const modalSpecsGrid = document.getElementById('modalSpecsGrid');
+const modalInquireBtn = document.getElementById('modalInquireBtn');
+
+let currentProjectIndex = 0;
+
+function renderModalProject(index) {
+  if (index < 0) index = projectsData.length - 1;
+  if (index >= projectsData.length) index = 0;
+  currentProjectIndex = index;
+
+  const project = projectsData[index];
+  modalImg.style.opacity = '0';
+
+  setTimeout(() => {
+    modalImg.src = project.img;
+    modalImg.alt = project.title;
+    modalImg.style.opacity = '1';
+  }, 120);
+
+  modalCounter.textContent = `${index + 1} / ${projectsData.length}`;
+  modalCategory.textContent = project.category;
+  modalStatus.textContent = project.status;
+  modalTitle.textContent = project.title;
+  modalApp.innerHTML = `<i class="fas fa-location-dot"></i> ${project.app}`;
+  modalDesc.textContent = project.desc;
+
+  modalSpecsGrid.innerHTML = project.specs.map(spec => `
+    <div class="spec-item">
+      <span class="spec-label">${spec.label}</span>
+      <span class="spec-val">${spec.val}</span>
+    </div>
+  `).join('');
+}
+
+function openProjectModal(projectId) {
+  const index = projectsData.findIndex(p => p.id === parseInt(projectId));
+  if (index !== -1) {
+    renderModalProject(index);
+    projectModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Bind clicks on project cards
+projectCards.forEach(card => {
+  const projectId = card.getAttribute('data-id');
+  
+  // Inspect button inside overlay
+  const inspectBtn = card.querySelector('.btn-inspect');
+  if (inspectBtn) {
+    inspectBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openProjectModal(projectId);
+    });
+  }
+
+  // Text link inside footer
+  const linkBtn = card.querySelector('.link-inspect');
+  if (linkBtn) {
+    linkBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openProjectModal(projectId);
+    });
+  }
+
+  // Click on the image wrap
+  const media = card.querySelector('.project-media');
+  if (media) {
+    media.style.cursor = 'pointer';
+    media.addEventListener('click', () => {
+      openProjectModal(projectId);
+    });
+  }
+});
+
+// Modal controls
+if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeProjectModal);
+if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
+
+if (modalPrevBtn) {
+  modalPrevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    renderModalProject(currentProjectIndex - 1);
+  });
+}
+
+if (modalNextBtn) {
+  modalNextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    renderModalProject(currentProjectIndex + 1);
+  });
+}
+
+// Keyboard controls (Escape, Left, Right)
+window.addEventListener('keydown', (e) => {
+  if (!projectModal || !projectModal.classList.contains('active')) return;
+  if (e.key === 'Escape') {
+    closeProjectModal();
+  } else if (e.key === 'ArrowLeft') {
+    renderModalProject(currentProjectIndex - 1);
+  } else if (e.key === 'ArrowRight') {
+    renderModalProject(currentProjectIndex + 1);
+  }
+});
+
+// Inquire CTA pre-fills the contact form
+if (modalInquireBtn) {
+  modalInquireBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currentProject = projectsData[currentProjectIndex];
+    closeProjectModal();
+
+    const contactSection = document.getElementById('contact');
+    const subjectField = document.getElementById('fsubject');
+    const messageField = document.getElementById('fmessage');
+
+    if (subjectField && currentProject) {
+      subjectField.value = `Inquiry regarding: ${currentProject.title}`;
+    }
+
+    if (contactSection) {
+      window.scrollTo({
+        top: contactSection.getBoundingClientRect().top + window.scrollY - 76,
+        behavior: 'smooth'
+      });
+      setTimeout(() => {
+        if (messageField) messageField.focus();
+      }, 700);
+    }
+  });
+}

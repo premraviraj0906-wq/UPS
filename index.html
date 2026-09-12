@@ -75,6 +75,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Deployments</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact" class="btn-nav" data-magnetic>Contact Us</a></li>
       </ul>
@@ -93,6 +94,10 @@
     <a href="#products" class="bottom-nav-item">
       <i class="fas fa-plug-circle-bolt"></i>
       <span>Products</span>
+    </a>
+    <a href="#projects" class="bottom-nav-item">
+      <i class="fas fa-shield-halved"></i>
+      <span>Projects</span>
     </a>
     <a href="#services" class="bottom-nav-item">
       <i class="fas fa-wrench"></i>
@@ -437,6 +442,456 @@
     </div>
   </section>
 
+  <!-- Projects / Live Installations -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header" data-aos="zoom-in">
+        <p class="section-tag"><i class="fas fa-shield-halved"></i> Field-Tested Reliability</p>
+        <h2>Live Deployments & Projects</h2>
+        <p class="section-desc">Real photos from our verified power backup, solar, stabilizer, and enterprise UPS installations across Bengaluru and Karnataka.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-layer-group"></i> All Deployments <span class="filter-count">12</span>
+        </button>
+        <button class="filter-btn" data-filter="enterprise">
+          <i class="fas fa-server"></i> Enterprise & IT <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="solar">
+          <i class="fas fa-solar-panel"></i> Solar Energy <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="servo">
+          <i class="fas fa-bolt"></i> Servo Stabilizers <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="inverter">
+          <i class="fas fa-car-battery"></i> Inverter & Batteries <span class="filter-count">6</span>
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Item 1: Enterprise Server Room -->
+        <article class="project-card" data-category="enterprise" data-id="1" data-aos="fade-up" data-delay="0">
+          <div class="project-media">
+            <img src="assets/images/server-room-vertiv-ups.jpeg" alt="Vertiv Liebert ITA2 Rackmount UPS & Exide Powersafe SMF Bank" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Active Server Room</span>
+              <span class="badge-cat">Enterprise IT</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Vertiv Liebert Server Room UPS">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-building"></i> Data Center</span>
+              <span class="meta-spec"><i class="fas fa-microchip"></i> 3-Phase Online</span>
+            </div>
+            <h3 class="project-heading">Vertiv Liebert ITA2 & Exide Powersafe Rack</h3>
+            <p class="project-desc">High-density server room power infrastructure with 16-battery tiered SMF rack and Legrand distribution switchgear for zero-downtime IT compute.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-bolt"></i> 0ms Transfer</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Solar Rooftop Installation -->
+        <article class="project-card" data-category="solar" data-id="2" data-aos="fade-up" data-delay="100">
+          <div class="project-media">
+            <img src="assets/images/rooftop-solar-installation.jpeg" alt="Commercial On-Grid Rooftop Solar Power Plant" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Commissioned</span>
+              <span class="badge-cat">Solar Energy</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Rooftop Solar Installation">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-sun"></i> Commercial Rooftop</span>
+              <span class="meta-spec"><i class="fas fa-solar-panel"></i> Mono PERC Array</span>
+            </div>
+            <h3 class="project-heading">Commercial On-Grid Rooftop Solar Plant</h3>
+            <p class="project-desc">Turnkey high-efficiency solar panel installation generating clean daytime power and drastically cutting commercial grid power tariffs.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-leaf"></i> 100% Green Energy</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Servopack Industrial Servo Stabilizer -->
+        <article class="project-card" data-category="servo" data-id="3" data-aos="fade-up" data-delay="200">
+          <div class="project-media">
+            <img src="assets/images/industrial-servo-stabilizer-servopack.jpeg" alt="Servopack Heavy-Duty Industrial Servo Stabilizer" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Substation Room</span>
+              <span class="badge-cat">Servo Stabilizer</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Servopack Industrial Servo Stabilizer">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-industry"></i> Industrial Plant</span>
+              <span class="meta-spec"><i class="fas fa-gauge-high"></i> Heavy Copper</span>
+            </div>
+            <h3 class="project-heading">Servopack Industrial Servo Voltage Stabilizer</h3>
+            <p class="project-desc">High-capacity Servopack voltage stabilizer deployed beside main switchgear to deliver steady voltage for sensitive automated machinery.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-shield-halved"></i> Fast Correction</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Microtek Jumbo 5500+ Battery Bank -->
+        <article class="project-card" data-category="inverter" data-id="4" data-aos="fade-up" data-delay="0">
+          <div class="project-media">
+            <img src="assets/images/microtek-jumbo-5500-battery-bank.jpeg" alt="Microtek Jumbo New 5500+ Commercial Power System" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> High Capacity</span>
+              <span class="badge-cat">Inverter & Battery</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Microtek Jumbo 5500+ System">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-store"></i> Commercial Setup</span>
+              <span class="meta-spec"><i class="fas fa-battery-full"></i> 4x Tubular Bank</span>
+            </div>
+            <h3 class="project-heading">Microtek Jumbo New 5500+ Power System</h3>
+            <p class="project-desc">Heavy-duty commercial backup solution driving multiple high-load circuits with a connected 4-battery industrial tubular array.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-bolt"></i> 5.5kVA Output</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5: Wall-Mount Microtek i-Lithium Smart Inverter -->
+        <article class="project-card" data-category="inverter" data-id="5" data-aos="fade-up" data-delay="100">
+          <div class="project-media">
+            <img src="assets/images/microtek-i-lithium-wall-mount.jpeg" alt="Microtek i-Lithium Wall-Mounted Smart Inverter" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Zero Floor Space</span>
+              <span class="badge-cat">Next-Gen Lithium</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Microtek i-Lithium Wall-Mount Setup">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-house"></i> Smart Home</span>
+              <span class="meta-spec"><i class="fas fa-wifi"></i> IoT Monitoring</span>
+            </div>
+            <h3 class="project-heading">Microtek i-Lithium Wall-Mounted Smart Inverter</h3>
+            <p class="project-desc">Sleek wall-mounted lithium inverter installation completely eliminating floor battery clutter while offering real-time smartphone monitoring.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-check"></i> In-Built Battery</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6: Live Solar Assembly in Progress -->
+        <article class="project-card" data-category="solar" data-id="6" data-aos="fade-up" data-delay="200">
+          <div class="project-media">
+            <img src="assets/images/solar-panel-structure-assembly.jpeg" alt="On-Site Solar PV Structure & Panel Erection" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> On-Site Engineering</span>
+              <span class="badge-cat">Solar Energy</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Live Solar Panel Installation">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-tools"></i> Installation Service</span>
+              <span class="meta-spec"><i class="fas fa-ruler-combined"></i> Custom Frame</span>
+            </div>
+            <h3 class="project-heading">Rooftop Solar Structure & Panel Assembly</h3>
+            <p class="project-desc">Unity Power Solutions technicians installing custom heavy-gauge galvanized solar mounting frames and precision DC cabling on-site.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-screwdriver-wrench"></i> Expert Rigging</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 7: Flydika Industrial Online UPS -->
+        <article class="project-card" data-category="enterprise" data-id="7" data-aos="fade-up" data-delay="0">
+          <div class="project-media">
+            <img src="assets/images/industrial-online-ups-rack.jpeg" alt="Flydika Industrial High-Power Online UPS Unit" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Production Line</span>
+              <span class="badge-cat">Enterprise IT</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Flydika Industrial Online UPS">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-industry"></i> Factory Facility</span>
+              <span class="meta-spec"><i class="fas fa-plug-circle-bolt"></i> Online UPS</span>
+            </div>
+            <h3 class="project-heading">Flydika Industrial High-Power Online UPS</h3>
+            <p class="project-desc">Industrial-grade online UPS on heavy caster wheels with modular rack-mounted battery bank and integrated Schneider protection controls.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-shield"></i> Heavy Surge Guard</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 8: Exide Home Star Dual Battery Setup -->
+        <article class="project-card" data-category="inverter" data-id="8" data-aos="fade-up" data-delay="100">
+          <div class="project-media">
+            <img src="assets/images/exide-home-star-dual-battery.jpeg" alt="Exide Home Star Inverter & Dual 150Ah Tubular Batteries" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Long Backup</span>
+              <span class="badge-cat">Inverter & Battery</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Exide Home Star Dual Battery Setup">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-house-medical"></i> Residence & Clinic</span>
+              <span class="meta-spec"><i class="fas fa-car-battery"></i> 2x 150Ah EL</span>
+            </div>
+            <h3 class="project-heading">Exide Home Star & Dual 150Ah Tubular Bank</h3>
+            <p class="project-desc">High-end residential and clinic power backup engineered with dual 150Ah Exide EL tubular batteries on an acid-resistant drip tray.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-certificate"></i> 36M Warranty</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 9: Microtek Jumbo 4000+ Modular Trolleys -->
+        <article class="project-card" data-category="inverter" data-id="9" data-aos="fade-up" data-delay="200">
+          <div class="project-media">
+            <img src="assets/images/microtek-jumbo-4000-trolley.jpeg" alt="Microtek Jumbo New 4000+ with Modular Trolley Cabinets" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Clean Wiring</span>
+              <span class="badge-cat">Inverter & Battery</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Microtek Jumbo 4000+ Setup">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-briefcase"></i> Commercial Office</span>
+              <span class="meta-spec"><i class="fas fa-box-archive"></i> Dual Trolley</span>
+            </div>
+            <h3 class="project-heading">Microtek Jumbo 4000+ with Modular Trolleys</h3>
+            <p class="project-desc">Clean, modern office power installation utilizing double enclosed shockproof battery trolleys for tidy aesthetics and safety.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-bolt"></i> 4kVA Output</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 10: Digital Servo Stabilizer Cabinet -->
+        <article class="project-card" data-category="servo" data-id="10" data-aos="fade-up" data-delay="0">
+          <div class="project-media">
+            <img src="assets/images/digital-servo-stabilizer-cabinet.jpeg" alt="Precision Digital Servo Stabilizer 3-Phase Unit" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Pre-Dispatch Test</span>
+              <span class="badge-cat">Servo Stabilizer</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Digital Servo Stabilizer Unit">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-microchip"></i> Commercial Labs</span>
+              <span class="meta-spec"><i class="fas fa-sliders"></i> Digital Display</span>
+            </div>
+            <h3 class="project-heading">Precision Digital Industrial Servo Stabilizer</h3>
+            <p class="project-desc">Pre-commissioned heavy-duty industrial stabilizer built to ensure steady 230V/415V supply across high-load manufacturing environments.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-shield-virus"></i> Auto Cut-Off</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 11: Exide Invagold 3-Tier Rack -->
+        <article class="project-card" data-category="inverter" data-id="11" data-aos="fade-up" data-delay="100">
+          <div class="project-media">
+            <img src="assets/images/exide-invagold-tubular-rack.jpeg" alt="Exide Invagold 3-Tier Commercial Battery Rack Setup" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Space Optimized</span>
+              <span class="badge-cat">Inverter & Battery</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Exide Invagold Multi-Tier Rack">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-layer-group"></i> Commercial Facility</span>
+              <span class="meta-spec"><i class="fas fa-battery-half"></i> 3x Invagold C10</span>
+            </div>
+            <h3 class="project-heading">Exide Invagold 3-Tier Battery Rack Setup</h3>
+            <p class="project-desc">Custom 3-level vertical battery rack installation maximizing uptime while occupying minimal floor space in a commercial workplace.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-arrows-up-down"></i> Vertical Rack</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 12: Microtek i-Lithium Specifications Card -->
+        <article class="project-card" data-category="inverter" data-id="12" data-aos="fade-up" data-delay="200">
+          <div class="project-media">
+            <img src="assets/images/microtek-i-lithium-features.jpeg" alt="Smart Wall-Mount Lithium Power Solutions (1500 & 3000 Series)" loading="lazy" decoding="async" />
+            <div class="project-tags-top">
+              <span class="badge-status"><span class="pulse-dot"></span> Next-Gen Tech</span>
+              <span class="badge-cat">Next-Gen Lithium</span>
+            </div>
+            <div class="project-media-overlay">
+              <button class="btn-inspect" type="button" aria-label="Inspect Microtek i-Lithium Technology Specifications">
+                <i class="fas fa-magnifying-glass-plus"></i>
+                <span>Inspect Setup</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="meta-app"><i class="fas fa-network-wired"></i> Smart IoT Ready</span>
+              <span class="meta-spec"><i class="fas fa-recycle"></i> 3,500 Cycles</span>
+            </div>
+            <h3 class="project-heading">Smart Wall-Mount Lithium Technology</h3>
+            <p class="project-desc">Authorized Unity Power Solutions specifications sheet for the revolutionary Microtek i-Lithium series with integrated BMS and rapid recharge.</p>
+            <div class="project-card-footer">
+              <span class="spec-highlight"><i class="fas fa-award"></i> 5-Yr Warranty</span>
+              <button class="link-inspect" type="button">Details & Specs <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+      </div> <!-- End projects-grid -->
+
+      <!-- Bottom Banner CTA -->
+      <div class="projects-cta-banner" data-aos="fade-up">
+        <div class="cta-banner-content">
+          <div class="cta-badge"><i class="fas fa-headset"></i> Custom Engineering</div>
+          <h3>Need a Custom Power Architecture for Your Site?</h3>
+          <p>Our certified power engineers design, deliver, and maintain tailored UPS, solar, and battery installations across Karnataka.</p>
+        </div>
+        <div class="cta-banner-actions">
+          <a href="#contact" class="btn-primary" data-magnetic>Get a Project Quote <i class="fas fa-arrow-right"></i></a>
+          <a href="tel:+919900056043" class="btn-outline" data-magnetic><i class="fas fa-phone"></i> +91 99000 56043</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Project Lightbox Modal -->
+  <div id="projectModal" class="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-wrapper">
+      <div class="modal-card">
+        <!-- Close Button -->
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+          <i class="fas fa-xmark"></i>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <button class="modal-nav prev-btn" id="modalPrevBtn" aria-label="Previous Project">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-nav next-btn" id="modalNextBtn" aria-label="Next Project">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="modal-layout">
+          <!-- Left: Image View -->
+          <div class="modal-media-wrap">
+            <img src="" alt="" id="modalImg" class="modal-img" />
+            <div class="modal-counter" id="modalCounter">1 / 12</div>
+          </div>
+
+          <!-- Right: Technical Details -->
+          <div class="modal-body">
+            <div class="modal-badge-row">
+              <span class="modal-badge-cat" id="modalCategory">Enterprise IT</span>
+              <span class="badge-status"><span class="pulse-dot"></span> <span id="modalStatus">Verified Deployment</span></span>
+            </div>
+            <h3 id="modalTitle" class="modal-title">Project Title</h3>
+            <p id="modalApp" class="modal-app-tag"><i class="fas fa-location-dot"></i> Bengaluru, Karnataka</p>
+            <p id="modalDesc" class="modal-desc">Detailed project description goes here.</p>
+
+            <div class="modal-specs-box">
+              <h4><i class="fas fa-microchip"></i> System Specifications</h4>
+              <div class="modal-specs-grid" id="modalSpecsGrid">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <a href="#contact" class="btn-primary modal-inquire-btn" id="modalInquireBtn">
+                <i class="fas fa-paper-plane"></i> Inquire About Similar Setup
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- About -->
   <section id="about" class="about section">
     <div class="container about-layout">
@@ -712,6 +1167,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Deployments & Projects</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
